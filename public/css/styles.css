@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url('../img/bg2.jpg');
+    background-repeat: repeat;
+    background-position: top center;
+    background-size: cover;
+    background-color: #FFF;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2.5rem;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+nav ul li a,
+nav ul li a:visited {
+    color: #482e8f;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+    color: #000;
+}
+main {
+    flex-grow: 1;
+}
+.logo img {
+    width: 70px;
+}
+header h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+section {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 40rem;
+    min-height: 80rem;
+    border-radius: 3rem;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
+}
+#showForecast {
+    display: none;
+}
+#showForecast h2 {
+    display: inline-flex;
+    gap: 1rem;
+    color: #482e8f;
+}
+#showForecast h2 svg {
+    width: 2rem;
+    fill: #482e8f;
+}
+#showForecast #temperature {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#showForecast #degrees {
+    font-size: 20rem;
+    line-height: 20rem;
+    color: #6201df;
+    background-image: linear-gradient(90deg, #6201df 39%, #7c80fa 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#showForecast #desc {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+}
+#showForecast #icon {
+    position: absolute;
+    bottom: -4rem;
+    right: 0;
+    width: 13rem;
+}
+#showForecast article {
+    display: flex;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    width: 100%;
+    padding: 2rem;
+    gap: 2rem;
+    color: #482e8f;
+    font-weight: 700;
+}
+article div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+article div span {
+    font-size: 0.85rem;
+    color: #9a97f7;
+}
+article .icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+#precipitation .icon {
+    background-image: url('../img/precip.svg');
+}
+#humidity .icon {
+    background-image: url('../img/humidity.svg');
+}
+#wind_speed .icon {
+    background-image: url('../img/wind-speed.svg');
+}
+section figure {
+    width: 20rem;
+}
+section h1 {
+    color: #482e8f;
+}
+section form {
+    padding: 0 3rem;
+    width: 100%;
+}
+section form .error {
+    font-size: 1rem;
+    text-align: center;
+    color: red;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+section form fieldset {
+    display: flex;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+section form input[type="text"] {
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 50px;
+    background-color: transparent;
+    outline: 0;
+    flex-grow: 1;
+}
+section form button {
+    padding: 0 1rem;
+    border: 0;
+    background-color: transparent;
+    outline: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section form button svg {
+    fill: #482e8f;
+    width: 1.5rem;
+}
+footer {
+    color: #FFF;
+    background-color: #9a97f7b6;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+img {
+    opacity: 1;
+}

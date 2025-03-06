@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} by {{ name }}</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div id="app">
+        {{>header}}
+        <main>
+            <section id="searchLocation">
+                <form>
+                    <fieldset>
+                        <input type="text" name="address" id="search_address" placeholder="Search Location...">
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M368 208A160 160 0 1 0 48 208a160 160 0 1 0 320 0zM337.1 371.1C301.7 399.2 256.8 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 48.8-16.8 93.7-44.9 129.1L505 471c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L337.1 371.1z"/></svg>
+                        </button>
+                    </fieldset>
+                    <div class="error"></div>
+                </form>
+                <figure>
+                    <img src="/img/logo.svg" alt="">
+                </figure>
+                <h1>
+                    Weather Forecasts
+                </h1>
+            </section>
+            <section id="showForecast">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                    <span id="location"></span>
+                </h2>
+                <h1 id="temperature">
+                    <span id="degrees"></span>
+                    <span id="desc"></span>
+                    <span id="icon">
+                        <img src="/img/icons/18.svg" alt="">
+                    </span>
+                </h1>
+                <article>
+                    <div id="precipitation">
+                        <div class="icon"></div>
+                        <div class="value"></div>
+                        <span>Precipitation</span>
+                    </div>
+                    <div id="humidity">
+                        <div class="icon"></div>
+                        <div class="value"></div>
+                        <span>Humidity</span>
+                    </div>
+                    <div id="wind_speed">
+                        <div class="icon"></div>
+                        <div class="value"></div>
+                        <span>Wind Speed</span>
+                    </div>
+                </article>
+            </section>
+        </main>
+        {{>footer}}
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+</html>
