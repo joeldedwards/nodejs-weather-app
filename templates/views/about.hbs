@@ -9,12 +9,24 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="{{ page }}">
+        {{>loader}}
         {{>header}}
         <main>
-            <img src="img/profile.webp" alt="{{ name }}">
+            <section>
+                <article>
+                    <h2>Web Developer</h2>
+                    <figure>
+                        <img src="img/profile.webp" alt="{{ name }}">
+                        <div class="bio">
+                            I am a Web Developer with over 10+ years experience working with multiple projects that encompass web design and development, applications, coding and creation of custom graphics. I take pride in writing clean and efficient code while utilizing industry's best practices and such is my passion.
+                        </div>
+                    </figure>
+                </article>
+            </section>
         </main>
         {{>footer}}
     </div>
+    <script src="/js/loader.js"></script>
 </body>
 </html>

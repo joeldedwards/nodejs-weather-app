@@ -1,6 +1,19 @@
 const weather_form = document.querySelector('form')
 const search = document.querySelector('input')
 
+const dummy = {
+    description: "Clear",
+    temperature: 39,
+    unit: "f",
+    location: "Tokyo, Japan",
+    wind_speed: 10,
+    humidity: 48,
+    precipitation: 5,
+    weather_code: 113,
+    is_day: "no",
+    icon_code: 6,
+}
+
 weather_form.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -28,9 +41,36 @@ weather_form.addEventListener('submit', (e) => {
         response.json().then((data) => {
             if (data.error) {
                 elemError.textContent = data.error
+                
+                elemLocation.textContent = dummy.location
+                elemDegrees.innerHTML = `${dummy.temperature}<sup>°</sup>`
+                elemDescription.textContent = dummy.description
+                elemPrecipitation.textContent = `${dummy.precipitation}%`
+                elemHumidity.textContent = `${dummy.humidity}%`
+                elemWindSpeed.textContent = `${dummy.wind_speed} mph`
+                elemWeatherIcon.src = `/img/icons/${dummy.icon_code}.png`
+
+                document.querySelector('#searchLocation').classList = 'device animate__animated animate__fadeOut'
+                document.querySelector('#searchLocation').style.display = 'none'
+                if (dummy.is_day === 'yes') {
+                    document.querySelector('#app').classList = 'light'
+                }
+                else {
+                    document.querySelector('#app').classList = 'dark'
+                }
+
+                document.querySelector('#showForecast').style.display = 'flex'
+                document.querySelector('#showForecast').classList = 'device animate__animated animate__fadeIn'
+                document.querySelector('#showForecast h2').classList = 'animate__animated animate__zoomIn'
+                document.querySelector('#temperature #degrees').classList = 'animate__animated animate__bounceIn'
+                document.querySelector('#temperature #icon').classList = 'animate__animated animate__slideInRight'
+                document.querySelector('#temperature #desc').classList = 'animate__animated animate__slideInLeft'
+                document.querySelector('#precipitation').classList = 'animate__animated animate__fadeInUp'
+                document.querySelector('#humidity').classList = 'animate__animated animate__fadeInUp'
+                document.querySelector('#wind_speed').classList = 'animate__animated animate__fadeInUp'
             }
             else {
-                let weather_code = '116',
+                let weather_code = '113',
                     icon_code = '6';
 
                 switch (weather_code) {
@@ -70,14 +110,14 @@ weather_form.addEventListener('submit', (e) => {
                 }
                 
                 elemLocation.textContent = data.forecast.location
-                elemDegrees.textContent = data.forecast.temperature
+                elemDegrees.innerHTML = `${data.forecast.temperature}<sup>°</sup>`
                 elemDescription.textContent = data.forecast.description
                 elemPrecipitation.textContent = `${data.forecast.precipitation}%`
                 elemHumidity.textContent = `${data.forecast.humidity}%`
                 elemWindSpeed.textContent = `${data.forecast.wind_speed} mph`
-                elemWeatherIcon.src = `/img/icons/${icon_code}.svg`
+                elemWeatherIcon.src = `/img/icons/${icon_code}.png`
 
-                document.querySelector('#searchLocation').classList = 'animate__animated animate__fadeOut'
+                document.querySelector('#searchLocation').classList = 'device animate__animated animate__fadeOut'
                 document.querySelector('#searchLocation').style.display = 'none'
                 if (data.forecast.is_day === 'yes') {
                     document.querySelector('#app').classList = 'light'
@@ -87,7 +127,14 @@ weather_form.addEventListener('submit', (e) => {
                 }
 
                 document.querySelector('#showForecast').style.display = 'flex'
-                document.querySelector('#showForecast').classList = 'animate__animated animate__zoomIn'
+                document.querySelector('#showForecast').classList = 'device animate__animated animate__fadeIn'
+                document.querySelector('#showForecast h2').classList = 'animate__animated animate__zoomIn'
+                document.querySelector('#temperature #degrees').classList = 'animate__animated animate__bounceIn'
+                document.querySelector('#temperature #icon').classList = 'animate__animated animate__slideInRight'
+                document.querySelector('#temperature #desc').classList = 'animate__animated animate__slideInLeft'
+                document.querySelector('#precipitation').classList = 'animate__animated animate__fadeInUp'
+                document.querySelector('#humidity').classList = 'animate__animated animate__fadeInUp'
+                document.querySelector('#wind_speed').classList = 'animate__animated animate__fadeInUp'
             }
         })
     })

@@ -28,14 +28,16 @@ app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather App',
         name: 'Joel Edwards',
+        page: 'page_home',
         year: year_date
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Weather App',
+        title: 'About Me',
         name: 'Joel Edwards',
+        page: 'page_about',
         year: year_date
     })
 })
@@ -45,6 +47,7 @@ app.get('/help', (req, res) => {
         title: 'Help Docs',
         subtitle: 'How can we help you today?',
         name: 'Joel Edwards',
+        page: 'page_help',
         year: year_date
     })
 })
@@ -54,6 +57,7 @@ app.get('/help/*', (req, res) => {
         title: '404',
         errorMsg: 'Help Article Not Found!',
         name: 'Joel Edwards',
+        page: 'page_404',
         year: year_date
     })
 })
@@ -98,6 +102,7 @@ app.get('*', (req, res) => {
         title: '404',
         errorMsg: 'Page Not Found!',
         name: 'Joel Edwards',
+        page: 'page_404',
         year: year_date
     })
 })

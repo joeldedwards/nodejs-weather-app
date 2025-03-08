@@ -10,12 +10,16 @@
     <script src="/js/app.js"></script>
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="{{ page }}">
+        {{>loader}}
         {{>header}}
         <main>
-            <p>{{ subtitle }}</p>
+            <section>
+                <p>{{ subtitle }}</p>
+            </section>
         </main>
         {{>footer}}
     </div>
+    <script src="/js/loader.js"></script>
 </body>
 </html>
